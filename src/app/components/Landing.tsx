@@ -10,8 +10,8 @@ const Nav = lazy(() => import("./Nav"));
 const Contact = lazy(() => import("./Contact"));
 
 const Landing = () => {
-    const [isOpen, setIsOpen] = useState(true);
-    const [isContact, setIsContact] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
+    const [isContact, setIsContact] = useState(false);
 
     return (
         <main className="w-full h-screen flex justify-center items-center m-0 p-0 relative">
@@ -25,13 +25,13 @@ const Landing = () => {
                 Your browser does not support the video tag.
             </video>
             {isOpen ? (
-                <CiMenuBurger
+                <RxCross1
                     className="absolute z-20 top-5 right-5 text-white text-5xl cursor-pointer"
                     onClick={() => setIsOpen(!isOpen)}
                     size={75}
                 />
             ) : (
-                <RxCross1
+                <CiMenuBurger
                     className="absolute z-20 top-5 right-5 text-white text-5xl cursor-pointer"
                     onClick={() => setIsOpen(!isOpen)}
                     size={75}
@@ -39,16 +39,16 @@ const Landing = () => {
             )}
             <div className="relative z-10 w-full h-screen flex justify-center items-center">
                 {isOpen ? (
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Nav />
+                    </Suspense>
+                ) : (
                     <Image
                         src="/logo.png"
                         alt="logo"
                         width={600}
                         height={300}
                     />
-                ) : (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <Nav />
-                    </Suspense>
                 )}
             </div>
             <CiMail
