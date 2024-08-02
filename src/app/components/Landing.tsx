@@ -5,8 +5,8 @@ import { CiMenuBurger } from "react-icons/ci";
 import { RxCross1 } from "react-icons/rx";
 import { CiMail } from "react-icons/ci";
 import { useState, lazy, Suspense } from "react";
+import Nav from "./Nav";
 
-const Nav = lazy(() => import("./Nav"));
 const Contact = lazy(() => import("./Contact"));
 
 const Landing = () => {
@@ -39,14 +39,12 @@ const Landing = () => {
             )}
             <div className="relative z-10 w-full h-screen flex justify-center items-center">
                 {isOpen ? (
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <Nav />
-                    </Suspense>
+                    <Nav />
                 ) : (
                     <Image
                         src="/logo.png"
                         alt="logo"
-                        width={600}
+                        width={300}
                         height={300}
                     />
                 )}
@@ -57,7 +55,7 @@ const Landing = () => {
                 color="white"
                 onClick={() => setIsContact(!isContact)}
             />
-            <div className="">
+            <div>
                 {isContact && (
                     <div className="absolute z-50 top-0 right-0 w-1/4 h-screen flex flex-col items-center justify-center bg-[#1c1e1f]">
                         <RxCross1

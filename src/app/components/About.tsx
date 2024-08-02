@@ -4,11 +4,11 @@ const Images = lazy(() => import("./Images"));
 
 const About = () => {
     return (
-        <main className="w-full h-screen flex flex-row justify-center items-center">
-            <section className="w-1/2 h-[60%] px-20 flex flex-col justify-between items-start">
+        <main className="w-full h-screen flex flex-col lg:flex-row justify-between items-center gap-10">
+            <section className="px-20 h-[65%] lg:w-1/2 w-full flex flex-col justify-around lg:justify-between items-start order-2 lg:order-1">
                 <h2 className="text-4xl tracking-widest uppercase">
-                    Lorem ipsum dolor sit amet{" "}
-                    <span className="font-bold">consectetur adipisicing</span>
+                    Lorem ipsum dolor{" "}
+                    <span className="font-bold">adipisicing</span>
                 </h2>
                 <p className="leading-7">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -22,14 +22,6 @@ const About = () => {
                     ducimus. Aperiam.
                     <br />
                     <br />
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Recusandae debitis beatae at iure molestias quam nobis
-                    atque, sint perferendis rerum. Quam eligendi saepe
-                    temporibus amet voluptatibus incidunt! Eum soluta debitis
-                    corporis et optio, voluptas, quo dicta iure velit eos
-                    explicabo.
-                    <br />
-                    <br />
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Fuga, adipisci.
                 </p>
@@ -37,9 +29,11 @@ const About = () => {
                     OUR HERITAGE
                 </button>
             </section>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Images />
-            </Suspense>
+            <section className="h-[65%] lg:w-1/2 w-full order-1 lg:order-2 flex justify-center items-center">
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Images />
+                </Suspense>
+            </section>
         </main>
     );
 };
