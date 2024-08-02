@@ -6,9 +6,6 @@ const Nav = () => {
     return (
         <nav className="text-white bg-black w-full h-screen flex flex-col justify-center items-center uppercase text-3xl font-bold tracking-widest">
             <ul className="flex flex-col gap-3 items-center">
-                <li className="cursor-pointer">Buy</li>
-                <li className="cursor-pointer">Sell</li>
-                <li className="cursor-pointer">Lease</li>
                 <li className="cursor-pointer">Team</li>
                 <li className="cursor-pointer">Our story</li>
                 <li className="cursor-pointer">Projects</li>

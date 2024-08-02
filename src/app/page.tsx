@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 const Landing = lazy(() => import("./components/Landing"));
 const About = lazy(() => import("./components/About"));
 const Header = lazy(() => import("./components/Header"));
+const Featured = lazy(() => import("./components/Featured"));
 
 export default function Home() {
     return (
@@ -11,6 +12,7 @@ export default function Home() {
                 <Header />
                 <Landing />
                 <About />
+                <Featured />
             </Suspense>
         </main>
     );
